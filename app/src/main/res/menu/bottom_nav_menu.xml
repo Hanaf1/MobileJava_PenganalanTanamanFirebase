@@ -12,9 +12,5 @@
         android:id="@+id/settings"
         android:title="Settings"
         android:icon="@drawable/ic_personbottomenu"/>
-    <item
-        android:id="@+id/Ml"
-        android:title="ML"
-        android:icon="@drawable/ic_personbottomenu"/>
 
 </menu>
