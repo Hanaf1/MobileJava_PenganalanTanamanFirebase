@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -14,7 +15,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -23,26 +26,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     buildFeatures {
         viewBinding true
         dataBinding true
-        mlModelBinding true
     }
-
-    packagingOptions {
+    packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
 }
-
 dependencies {
+    implementation libs.libraries.bom // BOM for version management
     implementation libs.material
     implementation libs.threetenabp
     implementation libs.gson
@@ -53,32 +52,17 @@ dependencies {
     implementation libs.firebase.auth
     implementation libs.lifecycle.runtime.ktx
     implementation libs.activity.compose
-    implementation libs.firebase.database
-    implementation libs.play.services.fitness
-    implementation libs.room.compiler
-    implementation libs.tensorflow.lite.support.v044
-    implementation libs.tensorflow.lite.metadata.v044
-    annotationProcessor libs.room.compiler
+    implementation libs.google.firebase.database
+    annotationProcessor libs.compiler
     implementation libs.recyclerview
     implementation libs.core.splashscreen
     implementation libs.appcompat
-    implementation libs.activity
+    implementation libs.material
+    implementation libs.activity.v131
     implementation libs.constraintlayout
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
     implementation libs.navigation.fragment.ktx
     implementation libs.navigation.ui.ktx
-
-    configurations.configureEach {
-        resolutionStrategy {
-            force 'org.jetbrains:annotations:23.0.0'
-        }
-    }
-
-    // Pengecualian untuk menghindari duplikasi dependensi
-    implementation(libs.glide) {
-        exclude group: 'com.intellij', module: 'annotations'
-    }
 }
-

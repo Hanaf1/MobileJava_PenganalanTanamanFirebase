@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.kelompok4.pengenalantanaman.fragment.DetectionFragment;
 import com.kelompok4.pengenalantanaman.fragment.FirstFragment;
 import com.kelompok4.pengenalantanaman.fragment.SecondFragment;
 import com.kelompok4.pengenalantanaman.fragment.ThirdFragment;
@@ -18,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
     ThirdFragment thirdFragment = new ThirdFragment();
-    DetectionFragment detectionFragment = new DetectionFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +42,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             return true;
         } else if (itemId == R.id.settings) {
             getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
-            return true;
-        } else if (itemId == R.id.Ml) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, detectionFragment).commit();
             return true;
         }
         return false;
