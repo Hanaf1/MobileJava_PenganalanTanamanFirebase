@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "972820195629",
+    "firebase_url": "https://pengenalantanamanobat-54547-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pengenalantanamanobat-54547",
+    "storage_bucket": "pengenalantanamanobat-54547.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972820195629:android:d1e57ba55dda14176e0ba4",
+        "android_client_info": {
+          "package_name": "com.kelompok4.pengenalantanaman"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHzeIQhxVoL70BaBw6qWV9FdGvDU_rCDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
